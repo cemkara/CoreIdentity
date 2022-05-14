@@ -1,0 +1,44 @@
+﻿@model List<CoreIdentity.Models.Article>
+@{
+    ViewData["Title"] = "Index";
+}
+<p>Only users with both admin or user roles can view this page.</p>
+<div class="card my-4">
+    <div class="card-header pb-0 p-3">
+        <div class="row">
+            <div class="col-6 d-flex align-items-center">
+                <h6 class="mb-0">Articles</h6>
+            </div>
+        </div>
+    </div>
+
+    <div class="card-body px-0 pb-2">
+        <div class="table-responsive p-0">
+            <table class="table align-items-center mb-0">
+                <thead>
+                    <tr>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Id</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Title</th>
+                        <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Content</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @item.ArticleId
+                            </td>
+                            <td>
+                                @item.Title
+                            </td>
+                            <td class="align-middle text-center text-sm">
+                                @item.Content
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
